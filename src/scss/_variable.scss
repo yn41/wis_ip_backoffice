@@ -1,0 +1,86 @@
+/*URL*/
+$url: "../img";
+$font_url: "../font";
+/*Hashing*/
+$version: "?v=0";
+
+// $max: 1080px;
+// $pc: 1004px; 
+$pc: 1080px; 
+// $s_pc: 1280;
+$tablet: 768px;
+$s_tablet: 768;
+$mobile: 360px;
+$s_mobile: 360;
+
+$header: 56px;
+$footer: 210px;
+
+/*Font 및 Color*/
+$family: "Pretendard", "pretendard", "프리텐다드","Apple SD Gothic Neo", "Malgun Gothic",  "맑은 고딕", "돋음", "AppleGothic", "Arial", "Meiryo", "sans-serif";
+$font: 16;
+$pc_font: 19;
+
+$normal: 400;
+$medi: 500;
+$bold: 700;
+
+
+$gray50 : #FCFCFC;
+$gray100 : #F5F5F6;
+$gray200 : #EBECED;
+$gray300 : #dbdcdd;
+$gray400 : #BCBEC3;
+$gray500 : #878990;
+$gray600 : #6b6d71;
+$gray700 : #47484e;
+$gray800 : #313336;
+$gray900 : #878990;
+
+$s_gray50 : "fCFCFC";
+$s_gray100 : "F5F5F6";
+$s_gray200 : "EBECED";
+$s_gray300 : "dbdcdd";
+$s_gray400 : "bcbec3";
+$s_gray500 : "878990";
+$s_gray600 : "6b6d71";
+$s_gray700 : "47484e";
+$s_gray800 : "313336";
+$s_gray900 : "212224";
+
+$purple50 : #F7F0FF;
+$purple100 : #EADFFF;
+$purple200 : #CCC8FF;
+$purple300 : #9887FF;
+$purple400 : #886AFF;
+$purple500 : #8145FF;
+$purple600 : #763FED;
+$purple700 : #6633D1;
+$purple800 : #5729B8;
+$purple900 : #45228F;
+
+$s_purple50 : "F7F0FF";
+$s_purple100 : "EADFFF";
+$s_purple200 : "CCC8FF";
+$s_purple300 : "9887FF";
+$s_purple400 : "886AFF";
+$s_purple500 : "8145FF";
+$s_purple600 : "763FED";
+$s_purple700 : "6633D1";
+$s_purple800 : "5729B8";
+$s_purple900 : "45228F";
+
+
+$point: $purple500;
+$dis: #969696;
+
+$border: rgba(39, 43, 55, 0.16);
+
+$white: #fff;
+$black: #212224;
+$red: #b3261e;
+
+$s_white: "fff";
+$s_black: "212224";
+$s_point: "8145ff";
+$s_red: "b3261e";

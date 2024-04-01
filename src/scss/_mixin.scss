@@ -1,0 +1,431 @@
+@function calcRem($size, $type: null) {
+  /*Mobile용 믹스인*/
+  // $remSize: $size / $font;
+  $temp : $font;
+  @if $type == "pc" {
+    $temp : $pc_font;
+  }
+  $remSize: math.div($size, $temp);
+  @return #{$remSize}rem;
+}
+
+@function calcVw($size:1, $defsize: 3.6) {
+  /*Mobile용 믹스인*/
+  $sum: math.div($size, $defsize);
+  // $sum: $size / $defsize; //320-7 
+  @return #{$sum}vw; 
+} 
+
+// @function calcVw($size) {
+//   // $remSize: $size / $font;
+//   // @return #{$remSize}rem;
+//   $remSize: $size / 3.2; //320-7 
+//   @return #{$remSize}vw;
+// } 
+
+@function calcPercent($size, $defsize: 360) {
+  /*Mobile용 믹스인*/
+  // $remSize: $size / $defsize;
+  $remSize: math.div($size, $defsize);
+  @return percentage($remSize);
+}
+
+@function calcLineHeight($size, $lineHeight) {
+  /*Mobile용 믹스인*/
+  // $remSize: $lineHeight / $size;
+  $remSize: math.div($lineHeight, $size);
+  @return $remSize;
+}
+
+@mixin setFont($nm, $fileNm, $weight: 100) {
+  @font-face {
+    font-family: $nm;
+    font-weight: $weight;
+    font-display: block;
+    src: local("※"), url($font_url + $fileNm + ".woff2") format("woff2"),
+      local("※"), url($font_url + $fileNm + ".woff") format("woff");
+    font-display: block;
+  }
+}
+
+@mixin fontfamily($weight: 400, $name: null) {
+  @if $name == "mont" {
+    font-family: "Montserrat";
+  }@else {
+    font-family: $family;
+  }
+  font-weight: $weight;
+}
+
+@mixin font($size, $line: null, $color: null, $weight: null){
+  font-size: calcRem($size);
+  @if $weight != null {
+    font-weight: $weight;
+  }
+  @if $color != null {
+    color: $color;
+  }
+  @if $line != null {
+    @if($size == $line){
+      line-height: 1; 
+    } @else {
+      @if($line == "normal"){
+        line-height: normal;
+      }@else{
+        line-height: calcRem($line); 
+      }
+    }
+  }@else{
+    line-height: normal;
+  }
+}
+
+@mixin fontPc($size, $line: null, $color: null, $weight: null){
+  font-size: calcRem($size, "pc");
+  @if $weight != null {
+    font-weight: $weight;
+  }
+  @if $color != null {
+    color: $color;
+  }
+  @if $line != null {
+    @if($size == $line){
+      line-height: 1; 
+    } @else {
+      @if($line == "normal"){
+        line-height: normal;
+      }@else{
+        line-height: calcRem($line, "pc"); 
+      }
+    }
+  }@else{
+    line-height: normal;
+  }
+}
+
+@mixin lineHight($size){
+  line-height: calcRem($size);
+}
+
+@mixin bgSvg(
+  $fc: null,
+  $repeat: no-repeat,
+  $bgPos: 0 0,
+  $bgSize: null,
+  $bgColor: null
+) {
+  background: $bgColor $fc $repeat $bgPos;
+  @if $bgSize != null {
+    background-size: $bgSize;
+  }
+}
+
+@mixin bg(
+  $fileNm: null,
+  $repeat: no-repeat,
+  $bgPos: 0 0,
+  $bgSize: null,
+  $bgColor: null
+) {
+  background: $bgColor url($url + $fileNm + $version) $repeat $bgPos;
+  image-rendering: -webkit-optimize-contrast;
+  @if $bgSize != null {
+    background-size: $bgSize;
+  }
+}
+@mixin ellipsis($type: null, $num: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $type == multi {
+    white-space: normal;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+  } @else {
+    white-space: nowrap;
+  }
+}
+
+@mixin clear($display: block) {
+  display: $display;
+  clear: both;
+  content: "";
+}
+
+@mixin setCont(
+  $width: auto,
+  $height: null,
+  $display: null,
+  $position: null,
+  $color: null
+) {
+  content: "";
+  width: $width;
+  @if $height != null {
+    height: $height;
+  }
+  @if $display != null {
+    display: $display;
+  }
+  @if $position != null {
+    position: $position;
+  }
+  @if $color != null {
+    background-color: $color;
+  }
+}
+
+@mixin blind {
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -2000em;
+}
+
+@mixin ani($ms:400ms) {
+  transition: all $ms;
+  transition-timing-function: cubic-bezier(0.12, 0.7, 0.29, 0.88);
+}
+@mixin ani1($ms:400ms) {
+  transition: all $ms;
+  transition-timing-function: cubic-bezier(0.15, 0.05, 0.69, 1);
+}
+
+@mixin ani2($ms:400ms) {
+  transition: all $ms;
+  transition-timing-function: cubic-bezier(0.3, 0.08, 0.77, 0.29);
+}
+
+@mixin center {
+  justify-content: center;
+  align-items: center;
+}
+
+// @mixin inner {
+//   width: $min;
+//   margin: 0 auto;
+// }
+@mixin scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  } /* 스크롤 바 */
+  &::-webkit-scrollbar-track {
+    background-color: #d9d9d9;
+    border-radius: 10px;
+  } /* 스크롤 바 밑의 배경 */
+  &::-webkit-scrollbar-thumb {
+    background: #a2a2a2;
+    border-radius: 10px;
+  } /* 실질적 스크롤 바 */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  } /* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+  &::-webkit-scrollbar-thumb:active {
+    background: #999;
+  } 
+}
+
+
+@mixin skeleton {
+    background-color: $gray100 !important;
+    background: linear-gradient(to right,  rgba(247,247,247,1) 0%,rgba(254,254,254,1) 52%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background-size: 200% 100%;
+    animation: aniSkeleton 3400ms infinite;
+    // color: $gray100 !important;
+    color: rgba(247,247,247, 0) !important;
+    border-radius: 4px;
+    display: inline-block;
+    img, .bar, div, em, span{
+      opacity: 0;
+    }
+}
+
+@keyframes aniSkeleton {
+  0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@mixin pc {
+  @media (min-width: $pc) {
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (min-width: $tablet){
+  // @media (min-width: $tablet) and (max-width: ($pc - 1)){
+    @content;
+  }
+}
+// @mixin toTablet{
+//   // @media (min-width: $tablet){
+//   @media (min-width: $tablet) and (max-width: ($pc - 1)){
+//     @content;
+//   }
+// }
+// @mixin mobile{
+//   // @media (min-width: $tablet){
+//   @media (max-width: ($tablet - 1)){
+//     @content;
+//   }
+// }
+
+// @mixin pcTablet{
+//   @media (max-width: $pc){
+//     @content;
+//   }
+// }
+
+// @mixin pcMobile {
+//   @media (max-width: $tablet) {
+//     @content;
+//   }
+// }
+@-webkit-keyframes aniMain1 {
+  0% { 
+      // transform: scale(1.1) translate(1px, -2px);
+      transform: rotate(0deg)
+  }
+  100%{
+      transform: rotate(360deg)
+  }
+}
+@-webkit-keyframes aniMain2 {
+  0% { 
+      transform: translateY(0);
+      // transform: scale(1)  translateY(0);
+  }
+  100%{
+      // transform: scale(1)  translateY(0);
+      transform: translateY(-5px) ;
+  }
+}
+@-webkit-keyframes aniMain3 {
+  0% { 
+      top: 480px;
+      opacity: 0;
+      right: -100px;
+      transform: rotate(-45deg);
+  }
+  20%{
+      top: 126px;
+      opacity: 1;
+      right: -59px;
+      transform: rotate(-5deg);
+  }
+  30%{
+      top: 166px;
+      // transform: rotate(0deg);
+  }
+  40%{
+      // top: 196px;
+      top: 146px;
+    }
+    50%{
+      // top: 205px;
+      top: 166px;
+    }
+    60%{
+      // top: 196px;
+      top: 146px;
+    }
+    70%{
+      // top: 205px;
+      top: 166px;
+  }
+  80%{
+      // top: 196px;
+      top: 146px;
+      opacity: 1;
+  }
+  90%{
+      // top: 120px;
+      top: 80px;
+      opacity: 0;
+      right: -59px;
+    }
+    100%{
+      // top: 120px;
+      top: 80px;
+      opacity: 0;
+      right: -59px;
+  }
+}
+
+
+@keyframes ani1{
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes ani_main2{
+  0% {
+    opacity: 0;
+    transform: scale(0.7, 0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes ani_loading1{
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes aniMainLoading1 {
+    0% { 
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes aniMainLoading2 {
+    0% { 
+        transform: translateX(-35vw);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes aniMainLoading3 {
+    0% { 
+        transform: translateX(35vw);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes aniMainLoading4 {
+    0% { 
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
