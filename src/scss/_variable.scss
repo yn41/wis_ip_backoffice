@@ -19,7 +19,7 @@ $footer: 210px;
 /*Font 및 Color*/
 $family: "Pretendard", "pretendard", "프리텐다드","Apple SD Gothic Neo", "Malgun Gothic",  "맑은 고딕", "돋음", "AppleGothic", "Arial", "Meiryo", "sans-serif";
 $font: 16;
-$pc_font: 19;
+$pc_font: 16;
 
 $normal: 400;
 $medi: 500;
@@ -79,6 +79,10 @@ $border: rgba(39, 43, 55, 0.16);
 $white: #fff;
 $black: #212224;
 $red: #b3261e;
+$gray: $gray500;
+$light_gray: #B5B5B5;
+$blue: #3076CB;
+$sky: #66A3EC;
 
 $s_white: "fff";
 $s_black: "212224";
