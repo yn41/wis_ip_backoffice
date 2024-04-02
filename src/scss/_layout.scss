@@ -55,15 +55,24 @@ header{
 .container{
     @include setCont(100%, auto, flex, relative);
     flex-grow: 1;
-    min-height: 700px;
+    overflow: hidden;    
     .content{
         @include setCont(auto, 100%, block, relative);
         flex-grow: 1;
-        padding: 40px 50px;
         overflow: auto;
+        .content_inner{
+            @include setCont(100%, 100%, block, relative);
+            padding: 40px 50px;
+            min-width: 1000px;
+            min-height: 700px;
+        }
         h2{
             @include font(20, 20);
             margin-bottom: 20px
+        }
+        &::-webkit-scrollbar {
+          width: 7px;
+          height: 7px;
         }
     }
 }
