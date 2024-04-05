@@ -3,7 +3,5 @@ node_modules/*
 package-lock.json
 *.zip
 dist/html
-style.css
-ui.js
 .history
 .history/*
