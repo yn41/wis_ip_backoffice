@@ -5,3 +5,5 @@ package-lock.json
 dist/html
 style.css
 ui.js
+.history
+.history/*

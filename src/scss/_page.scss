@@ -1,47 +1,50 @@
 .login{
-    @include setCont(100%, 100vh, block, relative, $gray50);
-    .inner{
-        @include setCont(600px, auto, block, fixed,$white);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 2px 4px 0 $gray100;
-        border-radius: 10px;
-        padding: 30px 50px 80px;
-    }
-    .logo{
-        @include font(18, 18, $point, $medi);
-        display: flex;
-        margin-bottom: 40px;
-        align-items: center;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        &::before{
-            @include setCont(40px, 40px, inline-block);
+	@include setCont(100%, 100vh, block, relative, $gray100);
+	.inner{
+		@include setCont(600px, auto, block, fixed,$white);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		box-shadow: 0 2px 4px 0 $gray100;
+		border-radius: 10px;
+		padding: 30px 50px 80px;
+	}
+	.logo{
+		@include font(18, 18, $point, $medi);
+		display: flex;
+		margin-bottom: 40px;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		&::before{
+			@include setCont(40px, 40px, inline-block);
 			@include bgSvg(logo($s_point), no-repeat, 50% 50%, 100% auto);
-            margin-right: 5px;
-        }
-    }
-    label{
-        display: block;
-        margin-bottom: 10px;
-        @include font(14, 17, $black, $medi);
-    }
-    .item{
-        &+.item{
-            margin-top: 20px;
-        }
-    }
-    .ipt{
-        @include setCont(100%, 46px);
-    }
-    .btn{
-        @include setCont(100%, auto, block, relative, $point);
-        @include font(16, 16, $white);
-        margin-top: 35px;
-        border-radius: 5px;
-        padding: 15px 10px;
-        text-align: center;
-    }
+			margin-right: 5px;
+		}
+	}
+	label{
+		display: block;
+		margin-bottom: 10px;
+		@include font(14, 17, $black, $medi);
+	}
+	.item{
+		&+.item{
+			margin-top: 20px;
+		}
+	}
+	.ipt{
+		@include setCont(100%, 46px);
+	}
+	.btn{
+		@include setCont(100%, auto, block, relative, $point);
+		@include font(16, 16, $white);
+		margin-top: 35px;
+		border-radius: 5px;
+		padding: 15px 10px;
+		text-align: center;
+	}
+}
+.management{
+	
 }

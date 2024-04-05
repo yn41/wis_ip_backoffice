@@ -1,262 +1,271 @@
 .wrap{
-    @include setCont(100%, 100vh, flex, relative);
-    flex-direction: column;
+	@include setCont(100%, 100vh, flex, relative);
+	flex-direction: column;
 }
 header{
-    @include setCont(100%, 60px, block, relative);
-    flex-shrink: 1;
-    border-bottom: 1px solid $gray100;
-    .inner{
-        @include setCont(100%, 100%, flex);
-        padding: 0 20px;
-        justify-content: space-between;
-        align-items: center;
-    }
-    .logo{
-        display: flex;
-        align-items: center;
-        @include font(18,18,$point);
-        &::before{
-            @include setCont(40px, 40px, inline-block);
+	@include setCont(100%, 60px, block, relative);
+	min-height: 60px;
+	flex-shrink: 1;
+	border-bottom: 1px solid $gray200;
+	.inner{
+		@include setCont(100%, 100%, flex);
+		padding: 0 20px;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.logo{
+		display: flex;
+		align-items: center;
+		@include font(18,18,$point);
+		&::before{
+			@include setCont(40px, 40px, inline-block);
 			@include bgSvg(logo($s_point), no-repeat, 50% 50%, 100% auto);
-        }
-    }
-    .right{
-        display: flex;
-        flex-shrink: 1;
-        align-items: center;
-    }
-    .btn_my, .btn_logout{
-        display: flex;
-        align-items: center;
-        @include font(14,14);
+		}
+	}
+	.right{
+		display: flex;
+		flex-shrink: 1;
+		align-items: center;
+	}
+	.btn_my, .btn_logout{
+		display: flex;
+		align-items: center;
+		@include font(14,14);
 		transition: all 300ms;
-        &::before{
-            @include setCont(20px, 20px, inline-block);
-        }
-        &:hover{
-            opacity: 0.6;
-        }
-    }
-    .btn_my{
-        &::before{
-            @include bgSvg(user($s_black), no-repeat, 50% 50%, 100% auto);
-            margin-right: 5px;
-        }
-    }
-    .btn_logout{
-        margin-left: 20px;
-        &::before{
-            @include bgSvg(logout($s_black), no-repeat, 50% 75%, 18px auto);
-            margin-right: 5px;
-        }
-    }
+		&::before{
+			@include setCont(20px, 20px, inline-block);
+		}
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+	.btn_my{
+		&::before{
+			@include bgSvg(user($s_black), no-repeat, 50% 50%, 100% auto);
+			margin-right: 5px;
+		}
+	}
+	.btn_logout{
+		margin-left: 20px;
+		&::before{
+			@include bgSvg(logout($s_black), no-repeat, 50% 75%, 18px auto);
+			margin-right: 5px;
+		}
+	}
 }
-.container{
-    @include setCont(100%, auto, flex, relative);
-    flex-grow: 1;
-    overflow: hidden;    
-    .content{
-        @include setCont(auto, 100%, block, relative);
-        flex-grow: 1;
-        overflow: auto;
-        .content_inner{
-            @include setCont(100%, 100%, block, relative);
-            padding: 40px 50px;
-            min-width: 1000px;
-            min-height: 700px;
-        }
-        h2{
-            @include font(20, 20);
-            margin-bottom: 20px
-        }
-        &::-webkit-scrollbar {
-          width: 7px;
-          height: 7px;
-        }
-    }
+.body{
+	@include setCont(100%, auto, flex, relative);
+	flex-grow: 1;
+	overflow: hidden;    
+	.container{
+		@include setCont(auto, 100%, block, relative);
+		flex-grow: 1;
+		overflow: auto;
+		padding: 40px 50px;
+		&::-webkit-scrollbar {
+			width: 7px;
+			height: 7px;
+		}
+		.inner{
+			@include setCont(100%, 100%, block, relative);
+			min-width: 1000px;
+			min-height: 600px;
+			max-width: 1500px;
+			margin: 0 auto;
+		}
+		.content{
+			@include setCont(100%, auto, block, relative);
+		}
+		h2{
+			@include font(20, 20);
+			margin-bottom: 40px
+		}
+		.top{
+			margin-bottom: 20px;
+		}
+	}
 }
 .menu{
-    @include setCont(auto, 100%, block, relative);
-    border-right: 1px solid $gray100;
-    flex-shrink: 1;
-    .gnb{
-        width: 100%;
-    }
-    .dep1{
-        width: 50px;
-        transition: all 300ms;
-        &.open{
-            width: 230px;
-            .sub_menu{
-                width: 180px;
-                background-color: $gray50;
-            }
-            .link_dep1 {
-                background-color: $gray50;
-                &::before, .img{
-                    opacity: 0.5;
-                }
-                span{
-                    background-color: $white;
-                    color: $point;
-                    box-shadow: 0 2px 4px 0 $gray100;
-                }
-            }
-           .sub_menu{
-                overflow-y: auto;
-                width: 180px;
-                opacity: 1;
-           }
-        }
-    }
-    a, button{
-        @include setCont(100%, auto, block);
-        @include font(15, 17);
-        white-space: nowrap;
-        text-align: left;
-        &.on{
-            font-weight: $bold;
-        }
-    }
-    .link_dep1{
-        @include setCont(50px, 50px);
-        border-bottom: 1px solid $gray100;
+	@include setCont(auto, 100%, block, relative);
+	border-right: 1px solid $gray200;
+	flex-shrink: 1;
+	.gnb{
+		width: 100%;
+	}
+	.dep1{
+		width: 50px;
 		transition: all 300ms;
-        position: relative;
-        &::before{
-            @include setCont(100%, 100%, block);
-        }
-        svg{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        span{
-            @include font(10,10,$white);
-            display: block;
-            position: absolute;
-            padding: 0 7px;
-            background-color: $purple300;
-            white-space: nowrap;
-            transition: all 300ms;
-            max-height: 0;
-            top: 37px;
-            left: 25px;
-            border-radius: 25px;
-            z-index: 2;
-            opacity: 0;
-            overflow: hidden;
-        }
-        &:hover{
-            span{
-                max-height: 100px;
-                padding: 4px 7px;
-                opacity: 1;
-            }
-        }
-        &.btn_home{
-            &::before{
-                @include bgSvg(home($s_black), no-repeat, 50% 50%, 18px auto);
-            }
-            &.on::before{
-                @include bgSvg(home($s_purple500), no-repeat, 50% 50%, 18px auto);
-            }
-        }
-        &.btn_management{
-            &::before{
-                @include bgSvg(management($s_black), no-repeat, 50% 50%, 20px auto);
-            }
-            &.on::before{
-                @include bgSvg(management($s_purple500), no-repeat, 50% 50%, 20px auto);
-            }
-        }
-        &.btn_feedback{
-            &::before{
-                @include bgSvg(feedback($s_black), no-repeat, 65% 50%, 25px auto);
-            }
-            &.on::before{
-                @include bgSvg(feedback($s_purple500), no-repeat, 65% 50%, 25px auto);
-            }
-        }
-        &.btn_subscription{
-            &::before{
-                @include bgSvg(subscription($s_black), no-repeat, 50% 50%, 20px auto);
-            }
-            &.on::before{
-                @include bgSvg(subscription($s_purple500), no-repeat, 50% 50%, 20px auto);
-            }
-        }
-    }
-    .sub_menu{
-        @include setCont(0, 100%, block, absolute);
-        border-left: 1px solid $gray100;
-        top: 0;
-        left: 50px;
-        overflow: hidden;
-        opacity: 0;
-        transition: all 300ms;
-        .dep2{
-            @include setCont(100%, auto, block);
-            border-bottom:  1px solid $gray100;
-            transition: all 300ms;
-            &:first-child{
-                &.s_open{
-                    padding-top: 5px;
-                }
-            }
-            &.s_open{
-                .link_dep2{
-                    &::before{
-                        transform: rotate(90deg);
-                        top: 35%;
-                    }
-                }
-                .dep3{
-                    // background-color: $gray50;
-                    max-height: 900px;
-                    padding: 5px 25px;
-                }
-            }
-            &.no_sub{
-                .link_dep2{
-                    &::before{
-                        display: none;
-                    }
+		&.open{
+			width: 250px;
+			.sub_menu{
+				width: 200px;
+				background-color: $gray100;
+				overflow-y: auto;
+				opacity: 1;
+			}
+			.link_dep1 {
+				background-color: $gray100;
+				&::before, .img{
+					opacity: 0.5;
+				}
+				span{
+					background-color: $white;
+					color: $point;
+					box-shadow: 0 2px 4px 0 $gray200;
+				}
+			}
+		}
+	}
+	a, button{
+		@include setCont(100%, auto, block);
+		@include font(15, 17);
+		white-space: nowrap;
+		text-align: left;
+		&.on{
+			font-weight: $bold;
+		}
+	}
+	.link_dep1{
+		@include setCont(50px, 50px);
+		border-bottom: 1px solid $gray200;
+		transition: all 300ms;
+		position: relative;
+		&::before{
+			@include setCont(100%, 100%, block);
+		}
+		svg{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		span{
+			@include font(10,10,$white);
+			display: block;
+			position: absolute;
+			padding: 0 7px;
+			background-color: $purple300;
+			white-space: nowrap;
+			transition: all 300ms;
+			max-height: 0;
+			top: 37px;
+			left: 25px;
+			border-radius: 25px;
+			z-index: 2;
+			opacity: 0;
+			overflow: hidden;
+		}
+		&:hover{
+			span{
+				max-height: 100px;
+				padding: 4px 7px;
+				opacity: 1;
+			}
+		}
+		&.btn_home{
+			&::before{
+				@include bgSvg(home($s_black), no-repeat, 50% 50%, 18px auto);
+			}
+			&.on::before{
+				@include bgSvg(home($s_purple500), no-repeat, 50% 50%, 18px auto);
+			}
+		}
+		&.btn_management{
+			&::before{
+				@include bgSvg(management($s_black), no-repeat, 50% 50%, 20px auto);
+			}
+			&.on::before{
+				@include bgSvg(management($s_purple500), no-repeat, 50% 50%, 20px auto);
+			}
+		}
+		&.btn_feedback{
+			&::before{
+				@include bgSvg(feedback($s_black), no-repeat, 65% 50%, 25px auto);
+			}
+			&.on::before{
+				@include bgSvg(feedback($s_purple500), no-repeat, 65% 50%, 25px auto);
+			}
+		}
+		&.btn_subscription{
+			&::before{
+				@include bgSvg(subscription($s_black), no-repeat, 50% 50%, 20px auto);
+			}
+			&.on::before{
+				@include bgSvg(subscription($s_purple500), no-repeat, 50% 50%, 20px auto);
+			}
+		}
+	}
+	.sub_menu{
+		@include setCont(0, 100%, block, absolute);
+		border-left: 1px solid $gray200;
+		top: 0;
+		left: 50px;
+		overflow: hidden;
+		opacity: 0;
+		transition: all 300ms;
+		.dep2{
+			@include setCont(100%, auto, block);
+			border-bottom:  1px solid $gray200;
+			transition: all 300ms;
+			&:first-child{
+				&.s_open{
+					padding-top: 5px;
+				}
+			}
+			&.s_open{
+				.link_dep2{
+					&::before{
+						transform: rotate(90deg);
+						top: 35%;
+					}
+				}
+				.dep3{
+					// background-color: $gray50;
+					max-height: 900px;
+					padding: 5px 25px;
+				}
+			}
+			&.no_sub{
+				.link_dep2{
+					&::before{
+						display: none;
+					}
 
-                }
-            }
-        }
-        .link_dep2{
-            padding: 10px 25px;
-            position: relative;
-            &::before{
-                @include setCont(5px , 10px, block, absolute);
-                @include bgSvg(arrNextFull($s_black), no-repeat, 50% 50%, 5px auto);
-                top: 50%;
-                left: 10px;                
-                transform: translate(0, -50%);
-            }
-            &:hover{
-                opacity: 0.6;
-            }
-        }
-        .link_dep3{
-            padding: 5px 0;
-            @include font(14, 16);
-            &:hover{
-                opacity: 0.6;
-                text-decoration: underline;
-            }
-        }
-        .dep3{
-            padding: 0 25px;
-            max-height: 0;
-            transition: all 300ms;
-        // position: absolute;
-            overflow: hidden;
-            background-color: $gray100;
-        }
-    }
+				}
+			}
+		}
+		.link_dep2{
+			padding: 10px 25px;
+			position: relative;
+			&::before{
+				@include setCont(5px , 10px, block, absolute);
+				@include bgSvg(arrNextFull($s_black), no-repeat, 50% 50%, 5px auto);
+				top: 50%;
+				left: 10px;                
+				transform: translate(0, -50%);
+			}
+			&:hover{
+				opacity: 0.6;
+			}
+		}
+		.link_dep3{
+			padding: 5px 0;
+			@include font(14, 16);
+			&:hover{
+				opacity: 0.6;
+				text-decoration: underline;
+			}
+		}
+		.dep3{
+			padding: 0 25px;
+			max-height: 0;
+			transition: all 300ms;
+		// position: absolute;
+			overflow: hidden;
+			background-color: $gray200;
+		}
+	}
+}
+.sub{
+
 }

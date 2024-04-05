@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<include src="include/head.html" title="user management"></include>
+	<body>
+		<div class="wrap">
+			<include src="include/header.html"></include>
+			<div class="body">
+				<include src="include/gnb.html" management="on"></include>
+				<!-- < include src="include/gnb.html" management="open" ></> -->
+				<div class="container">
+					<div class="inner">
+						<h2>User Registration</h2>
+						<div class="content">
+							<table class="tbl_detail">
+								<colgroup>
+									<col style="width:180px;"/>
+									<col/>
+								</colgroup>
+								<tr>
+									<th>ID</th>
+									<td>
+										<input type="text" class="ipt"/>
+									</td>
+								</tr>
+								<tr>
+									<th>Email</th>
+									<td>
+										<input type="text" class="ipt"/>
+									</td>
+								</tr>
+								<tr>
+									<th>Password</th>
+									<td>
+										<div class="colb">
+											<input type="password" class="ipt"/>
+										</div>
+									</td>
+								</tr>
+							</table>
+							<div class="colb mt30">
+								<div class="left">
+									<a href="userManagement.html" class="btn s_medi l_gray">user list</a>
+								</div>
+								<div class="right">
+									<button type="submit" class="btn s_medi s_medi">Register</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	
+$(function(){ 
+});
+</script>

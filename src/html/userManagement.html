@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<include src="include/head.html" title="user management"></include>
+	<body>
+		<div class="wrap">
+			<include src="include/header.html"></include>
+			<div class="body">
+				<include src="include/gnb.html" management="on"></include>
+				<!-- < include src="include/gnb.html" management="open" ></> -->
+				<div class="container">
+					<div class="inner">
+						<h2>User List</h2>
+						<div class="content">
+							<div class="top colr">
+								<div class="bx_search mr10">
+									<button type="button" class="btn_search">search button</button>
+									<input type="text" class="ipt" placeholder="Search Id">
+									<button type="button" class="btn_clear">delete</button>
+								</div>
+								<a href="userManagementRegister.html" class="btn s_medi">User Register</a>
+							</div>
+							<table class="tbl">
+								<colgroup>
+									<col style="width:80px;"/>
+									<col/>
+									<col style="width:250px;"/>
+									<col style="width:200px;"/>
+									<col style="width:150px;"/>
+								</colgroup>
+								<tr>
+									<th>#</th>
+									<th>Email</th>
+									<th>ID</th>
+									<th>CreationDate</th>
+									<th>Detail</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>support@wisdomain.com</td><td>Admin</td><td>2023/10/23 03:16</td>
+									<td><a href="userManagementDetail.html" class="btn s_tiny l_purple">Detail</a></td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>support@wisdomain.com</td><td>Admin</td><td>2023/10/23 03:16</td>
+									<td><a href="userManagementDetail.html" class="btn s_tiny l_purple">Detail</a></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>support@wisdomain.com</td><td>Admin</td><td>2023/10/23 03:16</td>
+									<td><a href="userManagementDetail.html" class="btn s_tiny l_purple">Detail</a></td>
+								</tr>
+							</table>
+							<div class="pagination">
+								<button type="button" class="btn_page_start">start page to go button</button>
+								<!-- <button type="button" class="btn_page_start disable">start page to go button</button> -->
+								<button type="button" class="btn_page_prev">previous button</button>
+								<a href="#" class="num on">1</a>
+								<a href="#" class="num">2</a>
+								<a href="#" class="num">3</a>
+								<a href="#" class="num">4</a>
+								<!-- <button type="button" class="num">1</button>
+								<button type="button" class="num">2</button>
+								<button type="button" class="num">3</button>
+								<button type="button" class="num">4</button> -->
+								<button type="button" class="btn_page_next">nex buttont</button>
+								<button type="button" class="btn_page_end">start page to go button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	
+$(function(){ 
+});
+</script>
