@@ -7,7 +7,7 @@
 		<meta name="theme-color" content="#ffffff">
 		<meta name="Description" content="IPRankings">
 		<meta property="og:image" content="../img/main.jpg">
-		<title>home | IPRankings Backoffice </title>
+		<title>Subscription List | IPRankings Backoffice </title>
 		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
 		<script src = "../js/jquery-3.7.1.min.js"></script>
 		<script src = "../js/ui.js"></script>
@@ -38,7 +38,7 @@
 					<!-- <button class="btn_menu"><span>menu</span></button> -->
 					<ul class="gnb">
 						<li class="dep1 no_sub">
-							<a href="home.html" class="link_dep1 btn_home on"><span>home</span></a>
+							<a href="home.html" class="link_dep1 btn_home "><span>home</span></a>
 						</li>
 						<li class="dep1 no_sub">
 							<a href="userManagement.html" class="link_dep1 btn_management "><span>user management</span></a>
@@ -46,13 +46,13 @@
 						<li class="dep1 no_sub">
 							<a href="feedback.html" class="link_dep1 btn_feedback "><span>feedback</span></a>
 						</li>
-						<li class="dep1 ">
+						<li class="dep1 open">
 							<button class="link_dep1 btn_subscription">
 								<span>subscription</span>
 							</button>
 							<ul class="sub_menu">
 								<li class="dep2 no_sub">
-									<a href="subscriptionList.html" class="link_dep2 ">subscription List</a>
+									<a href="subscriptionList.html" class="link_dep2 on">subscription List</a>
 								</li>
 								<li class="dep2 no_sub">
 									<a href="subscriberEmailList.html" class="link_dep2 ">Email Sending List</a>
@@ -145,9 +145,142 @@
 				<!-- < include src="include/gnb.html" management="open" ></> -->
 				<div class="container">
 					<div class="inner">
-						<h2>main page</h2>
+						<h2>Subscription List</h2>
 						<div class="content">
-							<p>준비중입니다.</p>
+							<div class="top colr">
+								<div class="bx_search">
+									<button type="button" class="btn_search">search button</button>
+									<input type="text" class="ipt" placeholder="Search Email">
+									<button type="button" class="btn_clear">delete</button>
+								</div>
+							</div>
+							<div class="list">
+								<div class="bx_item">
+									<div class="b_top">
+										<div class="colb">
+											<div class="left">
+												<span>#1</span>
+											</div>
+											<div class="right">
+												<span class="date">2024/03/19 08:32</span>
+											</div>
+										</div>
+									</div>
+									<div class="b_cont">
+										<div class="colb">
+											<div class="left">
+												<h3>felipefcdemorais@gmail.com</h3>
+											</div>
+											<div class="right">
+												<button class="btn s_tiny">Delete</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bx_item">
+									<div class="b_top">
+										<div class="colb">
+											<div class="left">
+												<span>#2</span>
+											</div>
+											<div class="right">
+												<span class="date">2024/03/19 08:32</span>
+											</div>
+										</div>
+									</div>
+									<div class="b_cont">
+										<div class="colb">
+											<div class="left">
+												<h3>felipefcdemorais@gmail.com</h3>
+											</div>
+											<div class="right">
+												<button class="btn s_tiny">Delete</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bx_item">
+									<div class="b_top">
+										<div class="colb">
+											<div class="left">
+												<span>#3</span>
+											</div>
+											<div class="right">
+												<span class="date">2024/03/19 08:32</span>
+											</div>
+										</div>
+									</div>
+									<div class="b_cont">
+										<div class="colb">
+											<div class="left">
+												<h3>felipefcdemorais@gmail.com</h3>
+											</div>
+											<div class="right">
+												<button class="btn s_tiny">Delete</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bx_item">
+									<div class="b_top">
+										<div class="colb">
+											<div class="left">
+												<span>#4</span>
+											</div>
+											<div class="right">
+												<span class="date">2024/03/19 08:32</span>
+											</div>
+										</div>
+									</div>
+									<div class="b_cont">
+										<div class="colb">
+											<div class="left">
+												<h3>felipefcdemorais@gmail.com</h3>
+											</div>
+											<div class="right">
+												<button class="btn s_tiny">Delete</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="bx_item">
+									<div class="b_top">
+										<div class="colb">
+											<div class="left">
+												<span>#5</span>
+											</div>
+											<div class="right">
+												<span class="date">2024/03/19 08:32</span>
+											</div>
+										</div>
+									</div>
+									<div class="b_cont">
+										<div class="colb">
+											<div class="left">
+												<h3>felipefcdemorais@gmail.com</h3>
+											</div>
+											<div class="right">
+												<button class="btn s_tiny">Delete</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pagination">
+								<button type="button" class="btn_page_start">start page to go button</button>
+								<!-- <button type="button" class="btn_page_start disable">start page to go button</button> -->
+								<button type="button" class="btn_page_prev">previous button</button>
+								<a href="#" class="num on">1</a>
+								<a href="#" class="num">2</a>
+								<a href="#" class="num">3</a>
+								<a href="#" class="num">4</a>
+								<!-- <button type="button" class="num">1</button>
+								<button type="button" class="num">2</button>
+								<button type="button" class="num">3</button>
+								<button type="button" class="num">4</button> -->
+								<button type="button" class="btn_page_next">nex buttont</button>
+								<button type="button" class="btn_page_end">start page to go button</button>
+							</div>
 						</div>
 					</div>
 				</div>

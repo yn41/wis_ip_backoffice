@@ -7,7 +7,7 @@
 		<meta name="theme-color" content="#ffffff">
 		<meta name="Description" content="IPRankings">
 		<meta property="og:image" content="../img/main.jpg">
-		<title>home | IPRankings Backoffice </title>
+		<title>News List | IPRankings Backoffice </title>
 		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
 		<script src = "../js/jquery-3.7.1.min.js"></script>
 		<script src = "../js/ui.js"></script>
@@ -38,7 +38,7 @@
 					<!-- <button class="btn_menu"><span>menu</span></button> -->
 					<ul class="gnb">
 						<li class="dep1 no_sub">
-							<a href="home.html" class="link_dep1 btn_home on"><span>home</span></a>
+							<a href="home.html" class="link_dep1 btn_home "><span>home</span></a>
 						</li>
 						<li class="dep1 no_sub">
 							<a href="userManagement.html" class="link_dep1 btn_management "><span>user management</span></a>
@@ -59,7 +59,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="dep1 ">
+						<li class="dep1 open">
 							<button class="link_dep1">
 								<!-- svg 말고 img 태그를 넣어도 상관없습니다. img 클래스만 추가해주세요 -->
 								<!-- https://icons.getbootstrap.kr 부트스트랩 icon 사용했씁니다 -->
@@ -70,7 +70,7 @@
 							</button>
 							<ul class="sub_menu">
 								<li class="dep2 no_sub">
-									<a href="newsList.html" class="link_dep2 ">Main - News Settings</a> <!--  현제페이지 표시 : on 클래스 추가 가능 -->
+									<a href="newsList.html" class="link_dep2 on">Main - News Settings</a> <!--  현제페이지 표시 : on 클래스 추가 가능 -->
 								</li>
 							</ul>
 						</li>
@@ -145,9 +145,50 @@
 				<!-- < include src="include/gnb.html" management="open" ></> -->
 				<div class="container">
 					<div class="inner">
-						<h2>main page</h2>
+						<h2>Main - News Settings</h2>
 						<div class="content">
-							<p>준비중입니다.</p>
+							<h3 class="mt5">News List</h3>
+							<div class="top colr">
+								<a href="newsRegister.html" class="btn s_medi">Posting Register</a>
+							</div>
+							<!-- 항목은 임시로 작성하였습니다. 실제 사용하는 데이터로 적용부탁드립니다. -->
+							<table class="tbl">
+								<colgroup> 
+									<col style="width:80px;"/>
+									<col style="width:150px;"/>
+									<col/>
+									<col style="width:80px;"/>
+									<col style="width:250px;"/>
+								</colgroup>
+								<tr>
+									<th>#</th>
+									<th>image</th>
+									<th>Title</th>
+									<th>location</th>
+									<th>posting Date</th>
+								</tr>
+								<tr>
+									<td>#1</td>
+									<td><a href="newsDetail.html"><img src="https://www.iprankings.com/img/linkedin_post01.png" alt="포스팅 썸네일"></a></td>
+									<td><a href="newsDetail.html">Top 10 Universities in the US: Patent Valuation</a></td>
+									<td>01</td><!-- 포스팅 위치 -->
+									<td>24.04.15 ~ 24.04.20</td><!-- 포스팅 전시 기간 -->
+								</tr>
+								<tr>
+									<td>#2</td>
+									<td><a href="newsDetail.html"><img src="https://www.iprankings.com/img/linkedin_post02.jfif" alt="포스팅 썸네일"></a></td>
+									<td><a href="newsDetail.html">Groundbreaking Approach to Investing: PTR and its Secrets</a></td>
+									<td>02</td><!-- 포스팅 위치 -->
+									<td>24.04.15 ~ 24.04.20</td><!-- 포스팅 전시 기간 -->
+								</tr>
+								<tr>
+									<td>#3</td>
+									<td><a href="newsDetail.html"><img src="https://www.iprankings.com/img/linkedin_post01.png" alt="포스팅 썸네일"></a></td>
+									<td><a href="newsDetail.html">Top 10 Universities in the US: Patent Valuation</a></td>
+									<td>03</td><!-- 포스팅 위치 -->
+									<td>24.04.15 ~ 24.04.20</td><!-- 포스팅 전시 기간 -->
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>

@@ -7,7 +7,7 @@
 		<meta name="theme-color" content="#ffffff">
 		<meta name="Description" content="IPRankings">
 		<meta property="og:image" content="../img/main.jpg">
-		<title>home | IPRankings Backoffice </title>
+		<title>Subscriber Email List | IPRankings Backoffice </title>
 		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
 		<script src = "../js/jquery-3.7.1.min.js"></script>
 		<script src = "../js/ui.js"></script>
@@ -38,7 +38,7 @@
 					<!-- <button class="btn_menu"><span>menu</span></button> -->
 					<ul class="gnb">
 						<li class="dep1 no_sub">
-							<a href="home.html" class="link_dep1 btn_home on"><span>home</span></a>
+							<a href="home.html" class="link_dep1 btn_home "><span>home</span></a>
 						</li>
 						<li class="dep1 no_sub">
 							<a href="userManagement.html" class="link_dep1 btn_management "><span>user management</span></a>
@@ -46,7 +46,7 @@
 						<li class="dep1 no_sub">
 							<a href="feedback.html" class="link_dep1 btn_feedback "><span>feedback</span></a>
 						</li>
-						<li class="dep1 ">
+						<li class="dep1 open">
 							<button class="link_dep1 btn_subscription">
 								<span>subscription</span>
 							</button>
@@ -55,7 +55,7 @@
 									<a href="subscriptionList.html" class="link_dep2 ">subscription List</a>
 								</li>
 								<li class="dep2 no_sub">
-									<a href="subscriberEmailList.html" class="link_dep2 ">Email Sending List</a>
+									<a href="subscriberEmailList.html" class="link_dep2 on">Email Sending List</a>
 								</li>
 							</ul>
 						</li>
@@ -145,9 +145,44 @@
 				<!-- < include src="include/gnb.html" management="open" ></> -->
 				<div class="container">
 					<div class="inner">
-						<h2>main page</h2>
+						<h2>Subscriber Email Sending List</h2>
 						<div class="content">
-							<p>준비중입니다.</p>
+							<div class="top colr">
+								<a href="subscriberEmailRegister.html" class="btn s_medi">Email Register</a>
+							</div>
+							<!-- 항목은 임시로 작성하였습니다. 실제 사용하는 데이터로 적용부탁드립니다. -->
+							<table class="tbl">
+								<colgroup> 
+									<col style="width:80px;"/>
+									<col/>
+									<col style="width:250px;"/>
+									<col style="width:150px;"/>
+								</colgroup>
+								<tr>
+									<th>#</th>
+									<th>title</th>
+									<th>email</th>
+									<th>send Date</th>
+								</tr>
+								<tr>
+									<td>#1</td>
+									<td><a href="subscriberEmailDetail.html">email title test test</a></td>
+									<td><a href="subscriberEmailDetail.html">felipefcdemorais@gmail.com</a></td>
+									<td>24.04.15</td>
+								</tr>
+								<tr>
+									<td>#2</td>
+									<td><a href="subscriberEmailDetail.html">email title test test</a></td>
+									<td><a href="subscriberEmailDetail.html">felipefcdemorais@gmail.com</a></td>
+									<td>24.04.15</td>
+								</tr>
+								<tr>
+									<td>#3</td>
+									<td><a href="subscriberEmailDetail.html">email title test test</a></td>
+									<td><a href="subscriberEmailDetail.html">felipefcdemorais@gmail.com</a></td>
+									<td>24.04.15</td>
+								</tr>
+							</table>
 						</div>
 					</div>
 				</div>

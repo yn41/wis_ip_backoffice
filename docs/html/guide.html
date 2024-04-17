@@ -9,9 +9,13 @@
 		<meta property="og:image" content="../img/main.jpg">
 		<title>guide | IPRankings Backoffice </title>
 		<link rel="icon" href="../img/favicon.ico" type="image/x-icon"> 
-		<link rel="stylesheet" type="text/css" href="../css/style.css">
 		<script src = "../js/jquery-3.7.1.min.js"></script>
 		<script src = "../js/ui.js"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+		<link rel="stylesheet" href="../css/bootstrap-datepicker.css">
+		<script src="../js/bootstrap-datepicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		
 		
 	</head>
 	<body>
@@ -20,9 +24,9 @@
 			<h2 class="ui_h2 mb10">IP Rankings Backoffice UI 가이드</h2>
 			<p class="mb20">아래 정의된 클래스는 HTML에서 class에 추가하여 사용 가능합니다.</p>
 			<article class="ui_article">
-				<h3 class="ui_h3">1) 글자</h3>
 				<div class="ui_container">
 					<div class="ui_left">
+					<h3 class="ui_h3">1) 글자</h3>
 					  <div class="ui_unit">
 						<h4 class="ui_h4">- 기본</h4>
 							<b>폰트</b> : Pretendard(프리텐다드) <br/>
@@ -109,7 +113,7 @@
 					</div>
 					<div class="ui_right">
 					  <div class="ui_unit">
-						<h3 class="ui_h3 mt30">2) 여백 & 단</h3>
+						<h3 class="ui_h3">2) 여백 & 단</h3>
 						<div class="ui_unit">
 							<h4 class="ui_h4">- 여백 : margin</h4>
 							<p>
@@ -265,8 +269,19 @@
 								<input type="text" class="ipt" placeholder="Search Patent Number">
 								<button type="button" class="btn_clear">delete</button>
 							</div>
+							<h4 class="ui_h4">- 부트스트랩 datePicker 사용</h4>
+							<p class="ui_desc">
+								<a href="https://github.com/uxsolutions/bootstrap-datepicker" class="ui_link">https://github.com/uxsolutions/bootstrap-datepicker</a>
+							</p>
+							<div class="bx_date mr20" style="width:200px;">
+								<input type="text" class="ipt datePicker" id="ipt_date1" ><label for="ipt_date1" class="label_date"><span>달력 아이콘</span></label>
+							</div>
+							<h4 class="ui_h4">- 파일 첨부</h4>
+							<div class="bx_file">
+								<input type="file" class="ipt i_file" id="ipt_file"><label for="ipt_file" class="label_file"><span>파일 아이콘</span></label>
+							</div>
 						</div>
-						<h3 class="ui_h3 mt25">2) Select box</h3>
+						<h3 class="ui_h3 mt25">3) Select box</h3>
 						<p class="ui_desc">가로 크기 지정시 bx_ipt에 인라인 스타일 적용해주세요</p>
 						<div class="ui_unit mt10">
 							<div class="bx_slct">
@@ -301,7 +316,7 @@
 								</ul>
 							</div>
 						</div>
-						<h3 class="ui_h3 mt25">2) check box</h3>
+						<h3 class="ui_h3 mt25">4) check box</h3>
 						<div class="ui_unit mt10">
 							<div class="bx_chk">
 								<input type="checkbox" id="chk1" class="chk">
@@ -312,7 +327,7 @@
 								<label for="chk2">체크를 해주세요</label>
 							</div>
 						</div>
-						<h3 class="ui_h3 mt25">2) Radio box</h3>
+						<h3 class="ui_h3 mt25">5) Radio box</h3>
 						<div class="ui_unit mt10">
 							<div class="bx_radio">
 								<input type="radio" id="radio1" name="r1" class="radio"/>
@@ -330,6 +345,13 @@
 								<input type="radio" id="radio3" class="radio" disabled="disabled" disabled="disabled"/>
 								<label for="radio3">라디오 버튼</label>
 							</div>
+						</div>
+						<h3 class="ui_h3 mt25">6) 아이콘 이미지</h3>
+						<div class="ui_unit mt10">
+							메뉴 및 기타 아이콘은 부트스트랩에서 제공하는 이미지를 사용했습니다.<br/>
+							<a href="https://icons.getbootstrap.kr/" target="_blank">
+								https://icons.getbootstrap.kr/
+							</a>
 						</div>
 					</div>
 				</div>
@@ -368,6 +390,16 @@
 								<tr>
 									<td>3</td>
 									<td>support@wisdomain.com</td><td>Admin</td><td>2023/10/23 03:16</td>
+									<td><a href="userManagementDetail.html" class="btn s_tiny l_purple">Detail</a></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="t_left">왼쪽 정렬 .t_left</td>
+									<td><a href="userManagementDetail.html" class="btn s_tiny l_purple">Detail</a></td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td class="t_right">오른쪽 정렬 .t_right</td>
 									<td><a href="userManagementDetail.html" class="btn s_tiny l_purple">Detail</a></td>
 								</tr>
 							</table>
@@ -507,13 +539,14 @@
 				border-left: none;
 			}
 		}
-		.ui_guide .ui_area .ui_h3 {
+		.ui_guide .ui_h3 {
 			color: #313131;
 			font-size: 16px;
 			margin-bottom: 10px;
 		}
 		.ui_guide .ui_h4 {
 			margin: 10px 0 5px;
+			font-size: 14px;
 		}
 		.ui_guide .ui_area .ui_h3:before {
 			content: "";
@@ -556,4 +589,11 @@
 			width: 34px;
 		}
 	</style>
+	<script>
+		$(function() {	
+			$(".datePicker").datepicker({
+				format: "yyyy-mm-dd",	//데이터 포맷 형식(yyyy : 년 mm : 월 dd : 일 )
+			});
+		});
+	</script>
 </html>

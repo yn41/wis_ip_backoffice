@@ -143,6 +143,9 @@
 	
 button {
 	transition: all 300ms ease;
+	&:hover, &:focus{
+		outline: unset;
+	}
 }
 .bx_chk{
 	.chk{
@@ -403,7 +406,7 @@ input.ipt{
 		padding: 0 15px 0 16px;
 		align-items: center;
 		transition: all 300ms;
-		border: 1px solid #d0d2d5;
+		border: 1px solid $gray200;
 		border-radius: 8px;
 		@include pc{
 			@include fontPc(14, 14);
@@ -421,6 +424,7 @@ input.ipt{
 		@include setCont(100%, 0, inline-block, absolute, $white);
 		padding: 0 8px;
 		top: 40px;
+		left: 0;
 		z-index: 5;
 		border: 0 solid rgba(255, 255, 255, 0);
 		transition: all 300ms;
@@ -450,10 +454,14 @@ input.ipt{
 			}
 		}
 	}
+	&:focus{
+		outline: unset;
+		border-color : #636567;
+	}
 	&.on{
 		.slct_tit{
 			border-radius: 8px 8px 0 0;
-			border-color : #636567;
+			border-color : $gray400;
 			&:after{
 				transform: translateY(-50%) rotate(180deg);
 			}
@@ -463,7 +471,7 @@ input.ipt{
 			padding: 4px 8px;
 			overflow: auto;
 			border-radius: 0 0 8px 8px;
-			border: 1px solid #636567;
+			border: 1px solid $gray400;
 			border-top: none;
 		}
 		&.red{
@@ -577,10 +585,10 @@ input.ipt{
 			text-align: center;
 		}
 		&.t_left{
-			text-align: center;
+			text-align: left;
 		}
 		&.t_right{
-			text-align: center;
+			text-align: right;
 		}
 	}
 	th{
@@ -590,6 +598,12 @@ input.ipt{
 	td{
 		@include font(14, 17);
 	}
+	a{
+		&:hover{
+			opacity: 0.8;
+			text-decoration: underline;
+		}
+	}
 }
 .tbl_detail{
 	border-top: 1px solid $gray200;
@@ -597,7 +611,7 @@ input.ipt{
 	margin: 10px 0 20px;
 	th,td{
 		text-align: center;
-		padding: 5px 20px;
+		padding: 7px 20px;
 		height: 45px;
 		border-bottom: 1px solid $gray200;
 		&.t_center{
@@ -630,6 +644,9 @@ input.ipt{
 		min-width: 180px;
 		padding: 13px 10px;
 		@include font(13, 13);
+	}
+	.bx_slct{
+		width: 100%;
 	}
 }
 .pagination{
@@ -728,6 +745,7 @@ input.ipt{
 		}
 		h3{
 			@include font(16, 19, $gray800);
+			margin-bottom: 0;
 			word-break: break-all;
 		}
 		.b_top{
@@ -749,5 +767,56 @@ input.ipt{
 				@include font(14, 17, $gray800, $medi);
 			}
 		}
+		.b_top, .b_cont{
+			h3{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.bx_date, .bx_file{
+	@include setCont(100%, 40px, flex);
+	align-items: center;
+	cursor: pointer;
+	&:hover{
+		opacity: 0.8;
+	}
+	input.ipt{
+		min-width: 80px;
+		width: auto;
+		flex-grow: 1;
+		border-radius: 8px 0 0 8px;
+		@include font(14, 40, $gray800);
+		padding: 0 18px;
+		&::file-selector-button {
+		  display: none;
+		}
+		&:focus, &:hover{
+			border: 1px solid $gray200
+		}
+	}
+	label{
+		@include setCont(40px, 100%, block, relative);
+		margin-bottom: 0;
+		border-radius: 0 8px 8px 0;
+		flex-shrink: 0;
+		span{
+			@include blind;
+		}
+	}
+	.label_date{
+		@include bgSvg(date($s_white), no-repeat, 50% 50%, 15px auto, $point);
+	}
+	.label_file{
+		@include bgSvg(file($s_white), no-repeat, 50% 50%, 15px auto, $point);
+	}
+}
+.datepicker{
+	width: 250px;
+	.prev, .datepicker-switch, .next{
+		padding: 10px 0;
+	}
+	.day{
+		padding: 3px 0;
 	}
 }
