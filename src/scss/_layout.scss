@@ -144,6 +144,15 @@ header{
 			left: 50%;
 			transform: translate(-50%, -50%);
 		}
+		svg{
+			transition: all 300ms;
+		}
+		.on_img{
+			opacity: 0;
+		}
+		.d_img{
+			opacity: 1;
+		}
 		span{
 			@include font(10,10,$white);
 			display: block;
@@ -197,6 +206,14 @@ header{
 			}
 			&.on::before{
 				@include bgSvg(subscription($s_purple500), no-repeat, 50% 50%, 20px auto);
+			}
+		}
+		&.on{
+			.on_img{
+				opacity: 1;
+			}
+			.d_img{
+				opacity: 0;
 			}
 		}
 	}

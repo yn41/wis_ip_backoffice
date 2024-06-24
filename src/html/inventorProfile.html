@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<include src="include/head.html" title="Inventor Profile"></include>
+	<body>
+		<div class="wrap">
+			<include src="include/header.html"></include>
+			<div class="body">
+				<include src="include/gnb.html" inventorProfile="on"></include>
+				<!-- < include src="include/gnb.html" management="open" ></> -->
+				<div class="container">
+					<div class="inner">
+						<h2>Inventor Profile Request List</h2>
+						<div class="content">
+							<table class="tbl">
+								<colgroup>
+									<col style="width:80px;"/>
+									<col style="width:120px;"/>
+									<col style="width:80px;"/>
+									<col/>
+									<col style="width:150px;"/>
+									<col style="width:150px;"/>
+								</colgroup>
+								<tr>
+									<th>#</th>
+									<th>Status</th>
+									<th>A/D</th><!-- 수락/거부 여부-->
+									<th>Email</th>
+									<th>Request Date</th>
+									<th>Closed Date</th>
+								</tr>
+								<tr onclick="location.href='inventorProfileDetail.html'" class="link_tr">
+									<td>3</td>
+									<td>Open</td>
+									<td>A</td>
+									<td>support@wisdomain.com</td>
+									<td>24.07.01</td>
+									<td>24.07.09</td>
+								</tr>
+								<tr onclick="location.href='inventorProfileDetail.html'" class="link_tr">
+									<td>2</td>
+									<td>Closed</td>
+									<td>D</td>
+									<td>support@wisdomain.com</td>
+									<td>24.06.01</td>
+									<td>24.06.09</td>
+								</tr>
+								<tr onclick="location.href='inventorProfileDetail.html'" class="link_tr">
+									<td>1</td>
+									<td>Closed</td>
+									<td>A</td>
+									<td>support@wisdomain.com</td>
+									<td>24.05.01</td>
+									<td>24.06.09</td>
+								</tr>
+							</table>
+							<div class="pagination">
+								<button type="button" class="btn_page_start">start page to go button</button>
+								<!-- <button type="button" class="btn_page_start disable">start page to go button</button> -->
+								<button type="button" class="btn_page_prev">previous button</button>
+								<a href="#" class="num on">1</a>
+								<a href="#" class="num">2</a>
+								<a href="#" class="num">3</a>
+								<a href="#" class="num">4</a>
+								<!-- <button type="button" class="num">1</button>
+								<button type="button" class="num">2</button>
+								<button type="button" class="num">3</button>
+								<button type="button" class="num">4</button> -->
+								<button type="button" class="btn_page_next">nex buttont</button>
+								<button type="button" class="btn_page_end">start page to go button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	
+$(function(){ 
+});
+</script>

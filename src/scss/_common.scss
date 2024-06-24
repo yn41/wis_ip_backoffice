@@ -101,7 +101,11 @@
 .f20 {
 	@include font(20);
 }
-	
+.link{
+	@include setCont(100%, auto, block);
+	@include ellipsis;
+	text-decoration: underline !important;
+}
 .col2,.col3,.col4,.col5,.colb,.coln {
 	display: flex !important;
 	align-items: center;
@@ -116,6 +120,11 @@
 	&+.area_search{
 		margin-top: 7px;
 	}
+}
+.colc {
+	display: flex !important;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .col2 {
 	&>.col {
@@ -589,6 +598,16 @@ input.ipt{
 		}
 		&.t_right{
 			text-align: right;
+		}
+	}
+	.link_tr{
+		cursor: pointer;
+		transition: all 300ms;
+		&:hover{
+			td{
+				background-color: #f8f5fe;
+				color: $gray600;
+			}
 		}
 	}
 	th{
